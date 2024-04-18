@@ -2,7 +2,7 @@
 
 This project is created from [this blog post](https://nishanc.medium.com/redis-as-a-distributed-cache-on-net-6-0-949ef5b795ee)
 
-Docker
+### Docker ###
 
 `docker run --name redis-local -p 5002:6379 -d redis`
 
@@ -13,3 +13,13 @@ Docker
 `redis-cli`
 
 `dbsize` - output should look like `(integer) 0`
+
+After running demo:
+
+From `redis-cli`: 
+
+run `scan 0` (iterates the set of keys in the currently selected redis database)([see more](https://redis.io/commands/scan/))
+
+`hgetall keyname` to see the list of fields and their values stored in the hash.  Use the `keyname` retrieved from running `scan 0`.
+
+
